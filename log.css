@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #007BFF; /* GPT의 버튼 색상을 사용 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h2 {
+    color: #333;
+}
+
+.input-container {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 40px; /* 높이를 10px로 조정합니다. */
+    color: #b6b6b6; /* 텍스트 색상을 연한 회색으로 지정 */
+    margin-top: 5px; /* 10px 아래로 떨어뜨립니다. */
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999; /* placeholder 텍스트 색상을 연한 회색으로 지정 */
+}
+
+
+button { /* 버튼 스타일을 수정합니다. */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #00c3ff; /* 남산의 느낌을 주는 버튼 색상 */
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 호버 시 색상 변화를 부드럽게 적용합니다. */
+}
+
+
+button:hover {
+    background-color: #00afe4; /* 호버 시 색상 변경 */
+}
+
+
+p  {
+    font-size: 50%; /* 글자 크기를 1/2로 줄입니다. */ 
+}
+
+p a:hover {
+    color: #007BFF;
+}
