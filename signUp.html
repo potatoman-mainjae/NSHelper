@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" type="text/css" href="log.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>남산</h2>
+        <div class="input-container">
+            <label for="username"></label>
+            <input type="text" id="signUpEmail" name="username" required placeholder="email을 입력하세요">
+        </div>
+        <div class="input-container">
+            <label for="password"></label>
+            <input type="password" id="signUpPassword" name="password" required placeholder="password 입력하세요">
+        </div>
+        <button type="submit" id="signUpButton">회원가입</button>
+        <p>계정이 생성됐나요? <a href="login.html">로그인</a></p>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyD0T5X101uYleUayPlYBThuz-G2i9KwTYU",
+        authDomain: "nshelper-d2311.firebaseapp.com",
+        projectId: "nshelper-d2311",
+        storageBucket: "nshelper-d2311.appspot.com",
+        messagingSenderId: "704161556389",
+        appId: "1:704161556389:web:9c85e946874dbd1261aa4c",
+        measurementId: "G-K436404F6Z"
+        }; 
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+
+        document.getElementById('signUpButton').addEventListener('click', (event) =>{
+            event.preventDefault()
+            const email = document.getElementById('signUpEmail').value
+            const password = document.getElementById('signUpPassword').value
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                        // Signed up 
+                const user = userCredential.user;
+                alert('회원가입 성공')
+
+                // 로그인 페이지로 리디렉션 (예: 로그인 페이지 URL로 변경)
+                window.location.href = "login.html"; // 로그인 페이지 URL로 변경
+                })
+                .catch((error) => {
+                    alert('회원가입 실패 다른 email로 시도해보시오')
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                });
+        })
+
+        document.getElementById("signUpEmail").addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                alert('password를 설정하세요');
+                document.getElementById("signUpPassword").focus(); // password 입력란으로 포커스 이동
+            }
+        });
+
+        document.getElementById("signUpPassword").addEventListener("keyup", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault()
+                const email = document.getElementById('signUpEmail').value
+                const password = document.getElementById('signUpPassword').value
+                const auth = getAuth();
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        // Signed up 
+                    const user = userCredential.user;
+                    alert('회원가입 완료')
+
+                    // 로그인 페이지로 리디렉션 (예: 로그인 페이지 URL로 변경)
+                    window.location.href = "login.html"; // 로그인 페이지 URL로 변경
+                    })
+                    .catch((error) => {
+                        alert('회원가입 실패 다른 email로 시도해보시오')
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                    });//회원가입 password input에서 enter키를 치면 회원가입 버튼 클릭과 같은 효과를 냄
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* 박스 컨테이너 스타일 */
+
+
+.community-container {
+    margin-top: 50px; /* 네비게이션 바의 높이만큼 마진 추가 */
+    padding: 20px;
+}
+
+.vertical-line {
+    position: fixed;
+    width: 2px; /* 선의 두께 조절 가능 */
+    background-color: #000; /* 선의 색상 조절 가능 */
+    height: 100%;
+    left: calc(70% - 1px); /* 중앙 정렬로 수정 */
+    z-index: -1; /* 네비게이션 바 위에 나타나도록 설정 */
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    position: fixed;
+    top: 70%;
+    left: calc(80% + 10px); /* 수직선 오른쪽에 조금 떨어지도록 설정 */
+    transform: translate(-20%, -10%);
+    display: flex; /* 버튼들을 가로로 나란히 표시하기 위해 flex 사용 */
+    gap: 10px; /* 버튼 사이 간격 설정 */
+    border-radius: 10px; /* 둥근 모서리 적용 */
+    z-index: 2; /* 수직선 위에 나타나도록 설정 */
+}
+
+/* 중앙 버튼 스타일 */
+.centered-button {
+    background-color: #007bff; /* 버튼의 배경색상 조절 가능 */
+    color: #fff; /* 버튼의 텍스트 색상 조절 가능 */
+    padding: 10px 20px; /* 버튼의 크기 조절 가능 */
+    border: none;
+    border-radius: 5px;
+    border-radius: 20px; /* 둥근 모서리 적용 */
+    cursor: pointer;
+}
+
+/* 이미지 컨테이너 스타일 */
+.image-container {
+    width: 69.9%; /* 수직선 왼쪽 절반 크기로 설정 */
+    position: absolute;
+    top: 93px; /* nav바 아래에서 시작 (선 아래로 내리려면 더 큰 값을 사용) */
+    bottom: 0; /* 수직선의 가장 아래까지 확장 */
+    left: 0;
+    overflow: hidden; /* 내용 넘치는 부분 가리기 */
+  }
+  
+  /* 이미지 스타일 */
+  .image-container img {
+    width: 100%; /* 이미지를 컨테이너에 꽉 채우도록 설정 */
+    height: 100%; /* 컨테이너 높이에 맞게 이미지의 세로 크기 조절 */
+  }
+
+  /* NS, 로그아웃, 마이페이지 가로 정렬 */
+.profile-link {
+    display: flex;
+    align-items: center;
+}
+.profile-link button {
+    margin-left: 10px; /* 버튼 사이의 간격 조절 가능 */
+}
+
+.get-start-text {
+    text-align: center;
+    font-size: 16px; /* 원하는 크기로 조절하세요 */
+    margin-top: 20px; /* 원하는 위치로 조절하세요 */
+  }

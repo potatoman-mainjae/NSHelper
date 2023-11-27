@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 페이지</title>
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" type="text/css" href="rac.css">
+    <style>
+        /* nav와 iframe 사이 간격 설정 */
+        iframe {
+            margin-top: 100px; /* 위쪽으로 10px 마진 추가 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="startPage.html">홈</a></li>
+                <li><a href="https://cwnamsan-h.gne.go.kr/cwnamsan-h/main.do">게시판</a></li>
+            </ul>
+            <div class="profile-link">
+                <a href="#" id="profileLink">
+                    <p>NS</p>
+                </a>
+                <!-- 로그아웃 버튼과 마이페이지 버튼을 추가하고 초기에는 숨김 -->
+                <button id="logoutButton" style="display: none;">로그아웃</button>
+                <button id="mypageButton" style="display: none;">마이페이지</button>
+            </div>
+             <!-- 로그인 버튼 추가 -->
+            <a href="login.html" id="loginButton" style="display: none;">로그인</a>
+        </nav>
+    </header>
+    
+    <iframe
+    src="https://www.chatbase.co/chatbot-iframe/F-VWcqorqW1fS9ixdQ1KN"
+    width="100%"
+    style="height: 70%; min-height: 500px"
+    frameborder="0"></iframe>
+
+
+</body>
+<script src="profile.js"></script>
+</html>

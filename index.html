@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 페이지</title>
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" type="text/css" href="rac.css">
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="startPage.html">홈</a></li>
+                <li><a href="https://cwnamsan-h.gne.go.kr/cwnamsan-h/main.do">게시판</a></li>
+            </ul>
+            <div class="profile-link">
+                <a href="#" id="profileLink">
+                    <p>NS</p>
+                </a>
+                <!-- 로그아웃 버튼과 마이페이지 버튼을 추가하고 초기에는 숨김 -->
+                <button id="logoutButton" style="display: none;">로그아웃</button>
+                <button id="mypageButton" style="display: none;">마이페이지</button>
+            </div>
+             <!-- 로그인 버튼 추가 -->
+            <a href="login.html" id="loginButton" style="display: none;">로그인</a>
+        </nav>
+    </header>
+    <div class="vertical-line"></div> <!-- 중앙 수직 선 -->
+    <div class="image-container">
+        <img src="img/과과연.png" alt="이미지 설명">
+    </div>
+    
+    <div class="button-container">
+        <button class="centered-button" onclick = "location.href = 'AI.html'">NShelper</button>
+        <button class="centered-button"onclick = "location.href = 'Community.html'">Community</button>
+    </div>
+
+    <p class="get-start-text">GET START</p>
+
+
+    <script src="profile.js"></script>
+</body>
+</html>
